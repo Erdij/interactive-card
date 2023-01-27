@@ -12,21 +12,28 @@
   /* background-size: cover;
   background-position: center;
   background-repeat: no-repeat; */
-  height: 200px;
+  height: 230px;
   width: 320px;
   border-radius: 10px;
+  position: absolute;
+  top: 180px;
+  z-index: 20;
 }
 .back-card {
   background: url("./images/bg-card-back.png") no-repeat center/cover;
   /* background-size: cover;
   background-position: center;
   background-repeat: no-repeat; */
-  height: 200px;
+  height: 230px;
   width: 320px;
   border-radius: 10px;
+  position: absolute;
 }
 .back-card p {
-  top: 5.3rem;
+  top: 6.15rem;
+}
+form {
+  margin-top: 350px;
 }
 form label {
   @apply block uppercase tracking-wider text-slate-800 mb-2 text-sm;
@@ -38,14 +45,24 @@ form input {
   background-color: hsl(278, 68%, 11%);
   @apply py-3 px-6 rounded shadow text-white text-base  tracking-wide lg:text-lg;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .front-card,
   .back-card {
+    position: relative;
     height: 300px;
     width: 500px;
     border-radius: 20px;
   }
+  .front-card {
+    top: 50px;
+  }
+  .back-card {
+    right: 0;
+  }
   .back-card p {
     top: 8.3rem;
+  }
+  form {
+    margin-top: 0;
   }
 }

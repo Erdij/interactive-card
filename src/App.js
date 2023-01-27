@@ -9,19 +9,19 @@ export default function App() {
   const [confirmed, setConfirmed] = useState(false);
   const [name, setName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
-  const [date, setDate] = useState("01/26");
+  const [date, setDate] = useState("01/01");
   const [cvc, setCvc] = useState("");
   return (
     <>
       <section>
-        <div className="absolute -z-10">
+        <div className="absolute -z-10 w-full ">
           <picture>
-            <source media="(min-width: 1024px)" srcSet={bgDesktop} />
-            <img src={bgMobile} alt="" />
+            <source media="(min-width: 768px)" srcSet={bgDesktop} />
+            <img src={bgMobile} alt="" className="w-full md:w-1/3  " />
           </picture>
         </div>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 max-w-7xl mx-auto ">
-          <div className="mt-10 mx-5 lg:grid lg:grid-cols-1 ">
+          <div className="mt-10 mx-5 grid grid-cols-1">
             <article className="front-card p-5 flex flex-col justify-between ">
               <img src={logo} alt="" className="w-20 lg:w-28" />
               <div>
@@ -45,9 +45,9 @@ export default function App() {
               </p>
             </article>
           </div>
-          <div>
+          <div className="pt-8 px-5 pb-20">
             {!confirmed && (
-              <form className="flex flex-col justify-center gap-8  max-w-lg h-screen">
+              <form className="flex flex-col justify-center gap-8  max-w-lg:h-screen">
                 <div>
                   <label htmlFor="cardholder_name">Cardholder Name</label>
                   <input
@@ -120,7 +120,7 @@ export default function App() {
 function Thankyou({ setConfirmed }) {
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-screen ">
+      <div className="flex flex-col items-center justify-center lg:h-screen max-w-lg mx-auto mt-80 md:mt-0 ">
         <img src={tick} alt="" className="block mx-auto" />
         <h1 className="text-slate-800 text-3xl my-6 uppercase text-center">
           Thank you
